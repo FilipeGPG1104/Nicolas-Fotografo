@@ -11,11 +11,13 @@
 2. Clique em **New query**.
 3. Cole todo o conteúdo do arquivo `01_supabase_setup.sql` (anexo).
 4. Clique em **Run**. Deve aparecer "Success. No rows returned".
-5. Confira em **Table Editor** se apareceram as tabelas `clientes`, `calendario` e `google_calendar_tokens`.
+5. Confira em **Table Editor** se apareceram as tabelas `clientes` e `calendario`.
 
-> Esse SQL já inclui a tabela original do seu prompt + uma coluna nova
-> (`google_event_id` em `calendario`) e uma tabela nova
-> (`google_calendar_tokens`) usadas na sincronização com o Google Agenda.
+> Se você já tinha rodado uma versão anterior deste SQL (com a tabela
+> `google_calendar_tokens` e a coluna `google_event_id`), rode também o
+> arquivo `02_atualizacoes.sql` — ele remove o que não é mais usado e
+> corrige uma policy que faltava (leitura pública dos horários ocupados,
+> necessária pro calendário do site funcionar).
 
 ## Passo 3 — Pegar a URL e a chave pública (anon key)
 1. No menu lateral, vá em **Project Settings** (ícone de engrenagem) → **API**.
@@ -63,13 +65,16 @@ mesmas duas variáveis na Vercel (Passo 3.1).
 Depois disso, todo agendamento feito no site vai:
 1. Criar/achar o cliente em `clientes`;
 2. Criar a linha em `calendario` com `status = 'pendente'`;
-3. Abrir o WhatsApp já com a mensagem pronta para o Nicolas confirmar;
-4. Se a integração do Google Calendar estiver ativa (guia 2), o evento
-   é criado sozinho na Agenda dele.
+3. Abrir o WhatsApp do visitante já com a mensagem pronta (nome, telefone,
+   tipo de sessão, local, data e horário) para ele mandar pro Nicolas
+   confirmar. Não precisa de nenhuma API do WhatsApp nem custo extra —
+   é o link `wa.me` padrão.
 
 ## Observação importante sobre o site atual
 No arquivo `main.js` original que veio no seu zip, o botão "Enviar pedido
 de agendamento" montava a mensagem do WhatsApp mas **não fazia nada com
-ela** (não salvava no banco, não abria o WhatsApp). Corrigi isso — sem essa
-parte, nenhum agendamento chegaria ao Supabase e não haveria nada para
-sincronizar com o Google Agenda.
+ela** (não salvava no banco, não abria o WhatsApp). Corrigi isso.
+
+**Lembre de trocar o número em `main.js`** — a constante `WHATSAPP_NUMERO`
+está com um número de exemplo (`5511999999999`); troque pelo WhatsApp real
+do Nicolas antes de publicar.

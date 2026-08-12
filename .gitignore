@@ -1,4 +1,3 @@
 .env
-supabase-functions/.env
 .vercel
 node_modules

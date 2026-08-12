@@ -55,7 +55,10 @@ const statusEl = document.getElementById('booking-status');
 const submitBtn = document.getElementById('booking-submit');
 
 const allSlots = ['16:00','17:30','19:00','20:30','22:00'];
-const WHATSAPP_NUMERO = '5511999999999'; // troque pelo número real do Nicolas (com DDI+DDD, só números)
+
+// ⚠️ TROQUE pelo número real do Nicolas — DDI 55 + DDD + número, só dígitos.
+// Exemplo: WhatsApp (11) 91234-5678 → '5511912345678'
+const WHATSAPP_NUMERO = '5511999999999';
 
 let horariosOcupados = new Set(); // "yyyy-mm-dd|hh:mm" dos horários já reservados
 
@@ -262,8 +265,8 @@ submitBtn.addEventListener('click', async ()=>{
     statusEl.textContent = 'Pedido enviado! Em breve o Nicolas confirma por WhatsApp.';
     submitBtn.textContent = 'Enviado ✓';
 
-    // A criação do evento no Google Agenda acontece automaticamente
-    // (veja GUIA-2-GOOGLE-CALENDAR.md) — não precisa de nada aqui no front-end.
+    // A mensagem acima já contém tudo que o Nicolas precisa pra confirmar:
+    // nome, telefone, tipo de sessão, local, data e horário.
 
   } catch (err) {
     console.error(err);
