@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nicolas Más — Fotografia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">NICOLAS<span>·</span>MÁS</div>
+  <nav><ul>
+    <li><a href="#portfolio">Portfólio</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#agenda">Agenda</a></li>
+  </ul></nav>
+  <a class="nav-insta" href="https://instagram.com/nicolasmasfotografo?utm_source" target="_blank" rel="noopener" aria-label="Instagram">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+  </a>
+</header>
+
+<section class="hero">
+  <span class="hero-eyebrow mono">Fotografia autoral · Retrato & </span>
+  <h1>Luz que<br>revela<br>histórias</h1>
+  <p>Fotógrafo baseado em São Paulo, especializado em retratos, fotos esportivas e cobertura de eventos. Cada clique é planejado para durar.</p>
+  <div class="hero-cta">
+    <a href="#portfolio" class="btn btn-primary">Ver portfólio</a>
+    <a href="#agenda" class="btn btn-ghost">Agendar sessão</a>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="about-grid">
+    <div class="about-photo"></div>
+    <div class="about-text">
+      <span class="section-tag">Sobre</span>
+      <h2 style="font-size:2.2rem;margin-bottom:20px;">Nicolas Más</h2>
+      <p>Há mais de 1 ano por trás das lentes, fotografo pessoas e momentos que não se repetem — uma assinatura que atravessa retratos, editoriais e registros de eventos.</p>
+      <p>Atendo em estúdio e locação, com equipamento próprio e entrega tratada em até 2 dias úteis.</p>
+      <div class="about-stats">
+        <div><div class="stat-num">1+</div><div class="stat-label">Ano de estrada</div></div>
+        <div><div class="stat-num">2000+</div><div class="stat-label">Ensaios entregues</div></div>
+        <div><div class="stat-num">118</div><div class="stat-label">Eventos cobertos</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="section-head">
+    <div>
+      <span class="section-tag">Portfólio</span>
+      <h2>Trabalhos recentes</h2>
+    </div>
+    <p>Uma seleção de ensaios e coberturas. O acervo completo está no Instagram e na galeria externa.</p>
+  </div>
+  <div class="grid" id="portfolio-grid"></div>
+  <div class="portfolio-more">
+    <a href="https://www.instagram.com/nicolasmasfotografo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" class="btn btn-ghost">Ver mais no Instagram</a>
+    <a href="https://banlek.com/nicolassmas_?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAacE6FjCgzb7U_C-XYYf3bf7V2CrH5ujGvEJegbAo03lXo2bezh0fcFg0G0V9Q_aem_1Nii6dnZ1Kncuf-bDYsAgQ" target="_blank" rel="noopener" class="btn btn-ghost">Galeria completa</a>
+  </div>
+</section>
+
+<section class="agenda" id="agenda">
+  <div class="section-head">
+    <div>
+      <span class="section-tag">Agenda</span>
+      <h2>Marque sua sessão</h2>
+    </div>
+    <p>Escolha uma data disponível, selecione o horário e envie os dados. A confirmação é feita por WhatsApp.</p>
+  </div>
+  <div class="agenda-wrap">
+    <div class="cal-card">
+      <div class="cal-head">
+        <div class="cal-month mono" id="cal-month"></div>
+        <div class="cal-nav">
+          <button id="cal-prev" aria-label="Mês anterior">‹</button>
+          <button id="cal-next" aria-label="Próximo mês">›</button>
+        </div>
+      </div>
+      <div class="cal-grid" id="cal-grid"></div>
+    </div>
+
+    <div class="booking-card">
+      <div class="booking-status mono" id="booking-status">Selecione uma data disponível no calendário.</div>
+
+      <div class="slots" id="slots"></div>
+
+      <div class="field">
+        <label for="fname">Nome</label>
+        <input type="text" id="fname" placeholder="Seu nome completo">
+      </div>
+      <div class="field">
+        <label for="fphone">WhatsApp</label>
+        <input type="text" id="fphone" placeholder="(11) 90000-0000">
+      </div>
+      <div class="field">
+        <label for="ftype">Tipo de sessão</label>
+        <select id="ftype">
+          <option>Retrato individual</option>
+          <option>Ensaio externo</option>
+          <option>Evento / cobertura</option>
+          <option>Editorial / comercial</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="flocal">Local da sessão</label>
+        <input type="text" id="flocal" placeholder="Rua, número, bairro, cidade">
+      </div>
+
+      <button class="btn btn-primary booking-submit" id="booking-submit" disabled>Enviar pedido de agendamento</button>
+    </div>
+  </div>
+
+
+<footer>
+  <div class="mono">© <span id="year"></span> Nicolas Más — São Paulo, BR</div>
+  <div class="social">
+    <a href="https://www.instagram.com/nicolasmasfotografo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://l.instagram.com/?u=https%3A%2F%2Fbanlek.com%2Fnicolassmas_%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAacE6FjCgzb7U_C-XYYf3bf7V2CrH5ujGvEJegbAo03lXo2bezh0fcFg0G0V9Q_aem_1Nii6dnZ1Kncuf-bDYsAgQ&e=AUBsFMzgYnC-FpBfMuHnoZDWU_XZOVoZ0aJrxSwNQ93CJsXDf0vCGtvwSO-zVa87HPJn2A4mZFoVkX0K8eHssExhR0jbrtqi1KZAjzL7Q5L0XMYA2UTEWkY4cBwq5h-g-STNyZ5bW1l8-H5faxQBsnE" target="_blank" rel="noopener">Portfólio completo</a>
+    <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
