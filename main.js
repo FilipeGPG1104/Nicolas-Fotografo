@@ -58,7 +58,7 @@ const allSlots = ['16:00','17:30','19:00','20:30','22:00'];
 
 // ⚠️ TROQUE pelo número real do Nicolas — DDI 55 + DDD + número, só dígitos.
 // Exemplo: WhatsApp (11) 91234-5678 → '5511912345678'
-const WHATSAPP_NUMERO = '5511999999999';
+const WHATSAPP_NUMERO = '5515991420448';
 
 let horariosOcupados = new Set(); // "yyyy-mm-dd|hh:mm" dos horários já reservados
 
