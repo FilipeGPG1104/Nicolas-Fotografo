@@ -40,7 +40,7 @@ const statusEl = document.getElementById('booking-status');
 const submitBtn = document.getElementById('booking-submit');
 
 // Número do WhatsApp do Nicolas: DDI + DDD + número, somente números.
-const WHATSAPP_NUMERO = '5511999999999';
+const WHATSAPP_NUMERO = '5515991420448';
 
 const allSlots = ['16:00','17:30','19:00','20:30','22:00'];
 
